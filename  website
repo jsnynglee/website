@@ -1,0 +1,87 @@
+# jsnynglee website
+
+import os
+
+from cs50 import SQL
+from flask import Flask, flash, redirect, render_template, request, session
+from flask_session import Session 
+from tempfile import mkdtemp 
+
+
+# configure application
+app = Flask(__name__)
+
+
+# configure cs50 library to use SQLite database
+db = SQL("sqlite://project.db")
+
+
+# make route to index 
+@app.route("/")
+def index():
+    print("hello")
+    return render_template("index.html")
+
+
+# make route to home 
+@app.route("/home")
+def home():
+    return render_template("index.hthml")
+
+
+# make route to about
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+
+# make route to work experience
+@app.rout("/workexperience")
+def workexperience():
+    return render_template("workexperience.html")
+
+
+# make route to hobbies
+@app.route("/hobbies")
+def hobbies():
+    return render_template("hobbies.html")
+
+
+# make route to crochet/knitting
+@app.route("/crochetknitting")
+def crochetknitting():
+    return render_template("crochetknitting.html")
+
+
+# make route to baking 
+@app.route("/baking")
+def baking():
+    return render_template("baking.html")
+
+
+# make route to art 
+@app.route("/art")
+def art():
+    return render_template("art.html")
+
+
+# make route to sewing
+@app.route("/sewing")
+def sewing():
+    return render_template("sewing.html")
+
+
+# make route to film 
+@app.route("/film")
+def film():
+    return render_template("film.html")
+
+# make route to blog
+@app.route("/blog")
+def blog():
+    return render_template("blog.html")
+
+# make route to contact
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
