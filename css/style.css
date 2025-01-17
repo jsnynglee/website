@@ -383,8 +383,31 @@ p {
     }
   }
   
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     .text-xxl {
       font-size: 2rem;
+    }
+  }
+
+/* mobile screen */
+  @media (max-width: 600px) {
+    h1, h2, h3, h4, h5 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+
+    .navbar ul li a {
+        font-size: 0.9rem;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .footer ul li {
+        font-size: 0.8rem;
     }
   }
