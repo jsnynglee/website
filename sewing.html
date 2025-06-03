@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sewing</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Joanne Lee</h1>
+    <nav>
+      <a href="index.html">Back to Home</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Sewing</h2>
+    <br>
+      
+    <div class="gallery">
+        <div class="photo-com" data-index="0">
+          <button class="arrow-btn arrow-left" onclick="prevImage(0)">&#8592;</button>
+          <img class="carousel-pic" src="https://via.placeholder.com/600x400/ffc0cb/fff?text=Photo+1A" alt="Photo 1" />
+          <button class="arrow-btn arrow-right" onclick="nextImage(0)">&#8594;</button>
+          <div class="caption">Birthday dress- first sewing project!</div>
+        </div>
+        <div class="photo-com" data-index="1">
+          <button class="arrow-btn arrow-left" onclick="prevImage(1)">&#8592;</button>
+          <img class="carousel-pic" src="https://via.placeholder.com/600x400/ffa6c9/fff?text=Photo+2A" alt="Photo 2" />
+          <button class="arrow-btn arrow-right" onclick="nextImage(1)">&#8594;</button>
+          <div class="caption">Junior Formal dress.</div>
+        </div>
+      </div>
+      <br>
+      <br>
+    
+      <footer>
+        <img src="images/logo.png" alt="logo" class="profile-pic">
+      </footer>
+      
+      <script>
+        // Arrays of images for each card index
+        const photoSets = [
+          [
+            "images/sewing1a.jpg",
+            "images/sewing1b.jpg",
+            "images/sewing1c.jpg",
+            "images/sewing1d.jpg",
+            "images/sewing1e.jpg"
+          ],
+          [
+            "images/sewing2d.jpg",
+            "images/sewing2a.jpg",
+            "images/sewing2b.jpg",
+            "images/sewing2c.jpg"
+          ],
+        ];
+    
+        // Track current image index per photo card
+        const currentIndexes = [0, 0, 0, 0];
+    
+        function updateImage(cardIndex) {
+          const card = document.querySelector(`.photo-com[data-index="${cardIndex}"]`);
+          const img = card.querySelector('img.carousel-pic');
+          img.src = photoSets[cardIndex][currentIndexes[cardIndex]];
+        }
+    
+        function nextImage(cardIndex) {
+          currentIndexes[cardIndex]++;
+          if (currentIndexes[cardIndex] >= photoSets[cardIndex].length) {
+            currentIndexes[cardIndex] = 0;
+          }
+          updateImage(cardIndex);
+        }
+    
+        function prevImage(cardIndex) {
+          currentIndexes[cardIndex]--;
+          if (currentIndexes[cardIndex] < 0) {
+            currentIndexes[cardIndex] = photoSets[cardIndex].length - 1;
+          }
+          updateImage(cardIndex);
+        }
+      </script>
+    
+  </main>
+  </html>
