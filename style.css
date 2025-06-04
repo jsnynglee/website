@@ -16,6 +16,12 @@ body {
     border-bottom: 2px solid #ffa6c9;
     box-shadow: 0 2px 5px rgba(255, 182, 193, 0.2);
   }
+
+ .static-header {
+    position: static; 
+    box-shadow: none;
+    border-bottom: none;
+ }
   
   header h1 {
     font-size: 2.5rem;
