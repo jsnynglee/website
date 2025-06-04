@@ -40,6 +40,7 @@
   </footer>
 
   <script>
+    let currentIndex = 0;
     const images = [
       "images/baking1.jpg",
       "images/baking2.jpg",
@@ -49,25 +50,32 @@
       "images/baking6.jpg",
       "images/baking7.jpg",
       "images/baking8.jpg",
-      "images/baking9.jpg"
+      "images/baking9.jpg",
+      "images/baking10.jpg",
+      "images/baking11.jpg",
+      "images/baking12.jpg",
+      "images/baking13.jpg",
     ];
 
-    let currentIndex = 0;
     const carouselImage = document.getElementById("carouselImage");
 
-    function updateCarousel() {
-      carouselImage.src = images[currentIndex];
-    }
+function updateCarousel() {
+  carouselImage.src = images[currentIndex];
+}
 
-    function nextImage() {
-      currentIndex = (currentIndex + 1) % images.length;
-      updateCarousel();
-    }
+function nextImage() {
+  currentIndex = (currentIndex + 1) % images.length;
+  updateCarousel();
+}
 
-    function prevImage() {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      updateCarousel();
-    }
+function prevImage() {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  updateCarousel();
+}
+
+window.onload = function () {
+  updateCarousel(); // ✅ Show first image on load
+};
   </script>
 </body>
 </html>
