@@ -2,91 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sewing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joanne Lee | Sewing</title>
   <link rel="stylesheet" href="style.css" />
-</head>
-<body class="noblur">
-  <header class="static-header">
-    <h1>Joanne Lee</h1>
-    <nav>
-      <a href="index.html">Back to Home</a>
-    </nav>
-  </header>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
-  <main>
-    <h2>Sewing</h2>
-    <br>
-      
-    <div class="gallery">
-        <div class="photo-com" data-index="0">
-          <button class="arrow-btn arrow-left" onclick="prevImage(0)">&#8592;</button>
-          <img class="carousel-pic" src="https://via.placeholder.com/600x400/ffc0cb/fff?text=Photo+1A" alt="Photo 1" />
-          <button class="arrow-btn arrow-right" onclick="nextImage(0)">&#8594;</button>
-          <div class="caption">Birthday dress- first sewing project!</div>
-        </div>
-        <div class="photo-com" data-index="1">
-          <button class="arrow-btn arrow-left" onclick="prevImage(1)">&#8592;</button>
-          <img class="carousel-pic" src="https://via.placeholder.com/600x400/ffa6c9/fff?text=Photo+2A" alt="Photo 2" />
-          <button class="arrow-btn arrow-right" onclick="nextImage(1)">&#8594;</button>
-          <div class="caption">Junior Formal dress.</div>
-        </div>
-      </div>
-      <br>
-      <br>
-    
-      <footer>
-        <img src="images/logo.png" alt="logo" class="profile-pic">
-      </footer>
-      
-      <script>
-        // Arrays of images for each card index
-        const photoSets = [
-          [
-            "images/sewing1a.jpg",
-            "images/sewing1b.jpg",
-            "images/sewing1c.jpg",
-            "images/sewing1d.jpg",
-            "images/sewing1e.jpg"
-          ],
-          [
-            "images/sewing2d.jpg",
-            "images/sewing2a.jpg",
-            "images/sewing2b.jpg",
-            "images/sewing2c.jpg"
-          ],
-        ];
-    
-        // Track current image index per photo card
-        const currentIndexes = [0, 0, 0, 0];
-    
-        function updateImage(cardIndex) {
-          const card = document.querySelector(`.photo-com[data-index="${cardIndex}"]`);
-          const img = card.querySelector('img.carousel-pic');
-          img.src = photoSets[cardIndex][currentIndexes[cardIndex]];
-        }
-    
-        function nextImage(cardIndex) {
-          currentIndexes[cardIndex]++;
-          if (currentIndexes[cardIndex] >= photoSets[cardIndex].length) {
-            currentIndexes[cardIndex] = 0;
-          }
-          updateImage(cardIndex);
-        }
-    
-        function prevImage(cardIndex) {
-          currentIndexes[cardIndex]--;
-          if (currentIndexes[cardIndex] < 0) {
-            currentIndexes[cardIndex] = photoSets[cardIndex].length - 1;
-          }
-          updateImage(cardIndex);
-        }
-        window.onload = function () {
-            for (let i = 0; i < photoSets.length; i++) {
-                updateImage(i);
+</head>
+
+<body class="noblur">
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="video-bg">
+      <source src="videos/backgroundvideo.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  
+    <header>
+        <nav class="static-nav">
+            <a href="index.html" class="nav-icon2">Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <h3>Sewing</h3>
+        <br>
+          
+        <div class="gallery">
+            <div class="photo-com" data-index="0">
+              <button class="arrow-btn arrow-left" onclick="prevImage(0)">&#8592;</button>
+              <img class="carousel-pic" src="https://via.placeholder.com/600x400/ffc0cb/fff?text=Photo+1A" alt="Photo 1" />
+              <button class="arrow-btn arrow-right" onclick="nextImage(0)">&#8594;</button>
+              <div class="caption">Birthday dress- first sewing project!</div>
+            </div>
+            <div class="photo-com" data-index="1">
+              <button class="arrow-btn arrow-left" onclick="prevImage(1)">&#8592;</button>
+              <img class="carousel-pic" src="https://via.placeholder.com/600x400/ffa6c9/fff?text=Photo+2A" alt="Photo 2" />
+              <button class="arrow-btn arrow-right" onclick="nextImage(1)">&#8594;</button>
+              <div class="caption">Junior Formal dress.</div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <footer>
+            <img src="images/logo.png" alt="logo" class="profile-pic">
+          </footer>
+          
+          <script>
+            // Arrays of images for each card index
+            const photoSets = [
+              [
+                "images/sewing1a.jpg",
+                "images/sewing1b.jpg",
+                "images/sewing1c.jpg",
+                "images/sewing1d.jpg",
+                "images/sewing1e.jpg"
+              ],
+              [
+                "images/sewing2d.jpg",
+                "images/sewing2a.jpg",
+                "images/sewing2b.jpg",
+                "images/sewing2c.jpg"
+              ],
+            ];
+        
+            // Track current image index per photo card
+            const currentIndexes = [0, 0, 0, 0];
+        
+            function updateImage(cardIndex) {
+              const card = document.querySelector(`.photo-com[data-index="${cardIndex}"]`);
+              const img = card.querySelector('img.carousel-pic');
+              img.src = photoSets[cardIndex][currentIndexes[cardIndex]];
             }
-        };
-      </script>
+        
+            function nextImage(cardIndex) {
+              currentIndexes[cardIndex]++;
+              if (currentIndexes[cardIndex] >= photoSets[cardIndex].length) {
+                currentIndexes[cardIndex] = 0;
+              }
+              updateImage(cardIndex);
+            }
+        
+            function prevImage(cardIndex) {
+              currentIndexes[cardIndex]--;
+              if (currentIndexes[cardIndex] < 0) {
+                currentIndexes[cardIndex] = photoSets[cardIndex].length - 1;
+              }
+              updateImage(cardIndex);
+            }
     
-  </main>
-  </html>
+            window.onload = function () {
+                for (let i = 0; i < photoSets.length; i++) {
+                    updateImage(i);
+                }
+            };
+          </script>
+        
+      </main>
+      </html>
