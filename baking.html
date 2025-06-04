@@ -2,81 +2,97 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Baking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joanne Lee | Baking</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
 </head>
+
 <body>
-  <header class="static-header">
-    <h1>Joanne Lee</h1>
-    <nav>
-      <a href="index.html">Back to Home</a>
-    </nav>
-  </header>
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="video-bg">
+      <source src="videos/backgroundvideo.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  
+    <header>
+        <nav class="static-nav">
+            <a href="index.html" class="nav-icon2">Home</a>
+        </nav>
+    </header>
 
-  <main>
-    <h2>Baking</h2>
-<body>
+    <main>
+        <h2>Baking</h2>
+    <body>
+    
+    
+      <div class="carousel-container">
+        <img class="carousel-img" id="carouselImage" src="https://via.placeholder.com/800x500/ffc0cb/ffffff?text=Photo+1" alt="Photo" />
+        <div>
+          <button class="arrow" onclick="prevImage()">←</button>
+          <button class="arrow" onclick="nextImage()">→</button>
+        </div>
+      </div>
+    
+      <div class="caption">
+        <p>
+            My specialty- Korean-style cakes with light whipped cream frosting. While I do enjoy making other baked goods- cookies, bread, cream puffs, etc- I enjoy baking and decorating cakes the most. I usually stuck with a minimal design, but with the rise of vintage cakes, I've been experimenting mixing the two styles together.
+        </p>
+        </div>
 
-
-  <div class="carousel-container">
-    <img class="carousel-img" id="carouselImage" src="https://via.placeholder.com/800x500/ffc0cb/ffffff?text=Photo+1" alt="Photo" />
-    <div>
-      <button class="arrow" onclick="prevImage()">←</button>
-      <button class="arrow" onclick="nextImage()">→</button>
-    </div>
-  </div>
-
-  <div class="caption">
-    <p>
-        My specialty- Korean-style cakes with light whipped cream frosting. While I do enjoy making other baked goods- cookies, bread, cream puffs, etc- I enjoy baking and decorating cakes the most. I usually stuck with a minimal design, but with the rise of vintage cakes, I've been experimenting mixing the two styles together.
-    </p>
-    </div>
-  <br>
-  <br>
-
-  <footer>
-    <img src="images/logo.png" alt="logo" class="profile-pic">
-  </footer>
-
-  <script>
-    let currentIndex = 0;
-    const images = [
-      "images/baking1.jpg",
-      "images/baking2.jpg",
-      "images/baking3.jpg",
-      "images/baking4.jpg",
-      "images/baking5.jpg",
-      "images/baking6.jpg",
-      "images/baking7.jpg",
-      "images/baking8.jpg",
-      "images/baking9.jpg",
-      "images/baking10.jpg",
-      "images/baking11.jpg",
-      "images/baking12.jpg",
-      "images/baking13.jpg",
-    ];
-
-    const carouselImage = document.getElementById("carouselImage");
-
-function updateCarousel() {
-  carouselImage.src = images[currentIndex];
-}
-
-function nextImage() {
-  currentIndex = (currentIndex + 1) % images.length;
-  updateCarousel();
-}
-
-function prevImage() {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  updateCarousel();
-}
-
-window.onload = function () {
-  updateCarousel(); // ✅ Show first image on load
-};
-  </script>
-</body>
-</html>
-  </main>
+      <br>
+      <br>
+      <br>
+      <br>
+    
+      <footer>
+        <img src="images/logo.png" alt="logo" class="profile-pic">
+      </footer>
+      
+      <script>
+        let currentIndex = 0;
+        const images = [
+          "images/baking1.jpg",
+          "images/baking2.jpg",
+          "images/baking3.jpg",
+          "images/baking4.jpg",
+          "images/baking5.jpg",
+          "images/baking6.jpg",
+          "images/baking7.jpg",
+          "images/baking8.jpg",
+          "images/baking9.jpg",
+          "images/baking10.jpg",
+          "images/baking11.jpg",
+          "images/baking12.jpg",
+          "images/baking13.jpg",
+        ];
+    
+        const carouselImage = document.getElementById("carouselImage");
+    
+    function updateCarousel() {
+      carouselImage.src = images[currentIndex];
+    }
+    
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateCarousel();
+    }
+    
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateCarousel();
+    }
+    
+    window.onload = function () {
+      updateCarousel(); // ✅ Show first image on load
+    };
+      </script>
+      </body>
+      </main>
+    </body>
+    </html>
+     
