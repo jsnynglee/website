@@ -1,167 +1,167 @@
-body {
+* {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fff0f5;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
     color: #333;
-    line-height: 1.6;
-  }
-  
-  header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: #ffc0cb;
-    padding: 0.75rem 1.5rem;
-    text-align: center;
-    border-bottom: 2px solid #ffa6c9;
-    box-shadow: 0 2px 5px rgba(255, 182, 193, 0.2);
+    overflow-x: hidden;
   }
 
- .static-header {
-    position: static; 
-    box-shadow: none;
-    border-bottom: none;
- }
-  
-  header h1 {
-    font-size: 2.5rem;
-    margin: 0;
-    font-family: 'Snell Roundhand', cursive;
-    color: white;
-    letter-spacing: 1px;
-  }
-  
-  nav {
-    margin-top: 0.5rem;
-    font-family: 'Georgia', serif;
-    font-size: 1.3rem;
-  }
-
-  h1 {
-    color: #d36c89;
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 50px;
-  }
-  
-  nav a {
-    margin: 0 1rem;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  nav a:hover {
-    color: #ffe4e1;
-  }
-  
-  .hero {
-    text-align: center;
-    padding: 3rem 1rem;
-    background-color: #ffe4e1;
-    border-bottom: 3px solid #ffa6c9;
-  }
-  
-  .profile-pic {
-    display: block;
-    margin: 0 auto 1rem auto;
-    width: 120px;
-  }
-  
-  .panel {
-    padding: 3rem 1rem;
-    max-width: 900px;
-    margin: auto;
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 0 6px 15px rgba(255, 182, 193, 0.3);
-    margin-bottom: 3rem;
-    border: 1px solid #ffd6e8;
-  }
-  
   h2 {
-    color: #d36c89;
+    color: #ff01a2;
     text-align: center;
     margin-bottom: 2.2rem;
-    font-family: 'Snell Roundhand', cursive;
+    font-family: 'New Century Schoolbook', serif;
     font-size: 2rem;
   }
+
+  /* Background Video */
+  #video-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  #bg-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  /* Overlay */
+  #overlay {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #hero-name {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    font-family: 'Snell Roundhand', cursive;
+    color: white;
+    cursor: pointer;
+    transition: all 1s ease, text-shadow 0.3s ease;
+    text-shadow: 0 0 20px hotpink, 0 0 30px black;
+  }
+
+  #hero-name:hover {
+    text-shadow: 0 0 20px #ff01a2, 0 0 30px #ff01a2;
+    color: #ff01a2;
+  }
+
+  #hero-name.moved {
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3.5rem;
+    color: #ff01a2;
+    text-shadow: 0 0 20px #ff01a2, 0 0 30px #ff01a2;
+    position: auto;
+  }
+
+  nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 6.5rem;
+    padding: 1rem;
+    backdrop-filter: blur(6px);
+    z-index: 999;
+  }
+
+  .nav-icon {
+    background: url('images/navbar.png') no-repeat center center/contain;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff01a2;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    font-family: 'New Century Schoolbook', serif;
+    padding-left: 1.3rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .nav-icon:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 15px hotpink;
+  }
+
+  section {
+    margin-top: 6rem;
+    padding: 2rem;
+    background-color: rgba(255, 240, 245, 0.9);
+    border-radius: 1rem;
+    max-width: 900px;
+    width: 90%;
+    backdrop-filter: blur(2px);
+  }
+
+  .hidden {
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  .fade-in {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 4s ease;
+  }
+
+  #site-footer {
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: 4rem;
+    z-index: 10;
+  }
   
-  ul, article, form {
+  .footer-content {
     max-width: 800px;
     margin: auto;
   }
-  
-  ul li {
-    background: #ffe6ec;
-    padding: 1rem;
-    border-radius: 12px;
-    margin-bottom: 1rem;
-    border: 1px solid #ffd6e8;
-    box-shadow: 0 2px 8px rgba(255, 192, 203, 0.2);
-    font-family: 'New Century Schoolbook', serif;
-    font-size: 1.1rem;
-  }
-  
-  article {
-    background: #fff5fa;
-    padding: 1.5rem;
-    border-left: 5px solid #ff99cc;
-    margin-bottom: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(255, 182, 193, 0.2);
-  }
-  
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem;
-  }
-  
-  .card {
-    background-color: #ffe4ec;
-    border: 2px solid #ffb6c1;
-    padding: 1.5rem;
-    border-radius: 16px;
-    text-align: center;
-    font-weight: bold;
-    box-shadow: 0 4px 12px rgba(255, 192, 203, 0.3);
-    transition: transform 0.2s ease;
-    color: #d36c89;
-    font-family: 'New Century Schoolbook', serif;
-    font-size: 1.15rem;
-  }
-
-  
-  .card:hover {
-    transform: scale(1.05);
-    background-color: #ffd6e8;
-    color: #c71585;
-  }
-  
-  form input, form textarea {
+ 
+  .profile-pic {
     display: block;
-    width: 100%;
-    margin-bottom: 1rem;
-    padding: 0.75rem;
-    border: 1px solid #d36c89;
-    border-radius: 8px;
-    font-size: 1rem;
-    background-color: #fff0f5;
-  }
-  
-  
-  footer {
-    background-color: #ffc0cb;
-    text-align: center;
-    padding: 1.5rem;
-    color: white;
-    font-size: 0.9rem;
-    border-top: 3px solid #ffa6c9;
+    margin: 0 auto 1rem auto;
+    width: 150px;
   }
 
+  html {
+    scroll-padding-top: 13rem;
+    scroll-behavior: smooth;
+  }
+
+  .textbox {
+    background-color: #fff5fa;
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    margin: 0.5rem 0;
+    box-shadow: 0 2px 8px rgba(255, 182, 193, 0.3);
+    transition: transform 0.3s ease;
+    font-family: 'New Century Schoolbook', serif;
+    font-size: 1rem;
+  }
 
   .social-icons {
     text-align: center;
@@ -178,22 +178,83 @@ body {
     color: #ff1493;
   }  
 
-  h3 {
-    font-family: 'New Century Schoolbook', serif;
-    font-size: 1.15rem;
+  article {
+    background: #fff5fa;
+    padding: 1.5rem;
+    border-left: 5px solid #ff99cc;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(255, 182, 193, 0.2);
   }
 
-  p {
-    font-family: monospace; 
+  .video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    z-index: -1;
+    object-fit: cover;
   }
 
- 
-.blog-entry {
+  #hero-static {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3.5rem;
+    font-family: 'Snell Roundhand', cursive;
+    color: #ff01a2;
+    text-shadow: 0 0 20px #ff01a2, 0 0 30px #ff01a2;
+    cursor: default;
+    z-index: 1000;
+    transition: text-shadow 0.3s ease;
+  }
+
+  #hero-static:hover {
+    text-shadow: 0 0 20px #ff01a2, 0 0 40px #ff01a2;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0.75rem 1.5rem 0rem;
+    text-align: center;
+    backdrop-filter: blur(6px);
+  }
+
+  header h1 {
+    font-size: 3rem;
+    font-family: 'Snell Roundhand', cursive;
+    text-shadow: 0 0 20px #ff01a2, 0 0 30px #ff01a2;
+    color: #ff01a2;
+    backdrop-filter: blur(6px);
+    top: 0;
+  }
+
+  .static-nav {
+    margin-top: 0.5rem;
+    font-family: 'Snell Roundhand', cursive;
+    padding-right: 1rem;
+  }
+
+  .panel {
+    padding: 3rem 1rem;
+    max-width: 900px;
+    margin: auto;
+    border-radius: 20px;
+    margin-bottom: 3rem;
+    background-color: transparent;
+  }
+
+  .blog-entry {
     border: 2px solid #ffd6e8;
     border-radius: 16px;
     padding: 1rem;
-    background-color: #fff5fa;
+    background-color: rgba(255, 240, 245, 0.9);
     box-shadow: 0 4px 12px rgba(255, 182, 193, 0.2);
+    margin: auto;
   }
 
   .blog-content {
@@ -202,7 +263,7 @@ body {
   }
 
   .read-more {
-    background-color: #ffb6c1;
+    background-color: #ff69b4;
     color: white;
     border: none;
     padding: 0.4rem 0.8rem;
@@ -237,6 +298,37 @@ body {
     object-fit: cover;
   }
 
+  article {
+    background: #fff5fa;
+    padding: 1.5rem;
+    border-left: 5px solid #ff99cc;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(255, 182, 193, 0.2);
+  }
+
+  ul, article, form {
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .nav-icon2 {
+    background: url('images/navbar.png') no-repeat center center/contain;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff01a2;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    font-family: 'New Century Schoolbook', serif;
+    padding-left: 1rem;
+    padding-bottom: 2rem;
+  }
 
   .video-grid {
     display: grid;
@@ -245,7 +337,7 @@ body {
   }
 
   .video-card {
-    background-color: white;
+    background-color: #fff5fa;
     border: 1.5px solid #ffa6c9;
     border-radius: 10px;
     overflow: hidden;
@@ -274,7 +366,7 @@ body {
     font-size: 1.3rem;
     margin: 0 0 0.5rem;
     font-weight: 700;
-    color: #d36c89;
+    color: black;
   }
 
   .video-desc {
@@ -286,8 +378,10 @@ body {
 
   .photo-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
   }
 
   @media (max-width: 1000px) {
@@ -303,7 +397,7 @@ body {
   }
 
   .photo-card {
-    background-color: white;
+    background-color: #fff5fa;
     border: 1.5px solid #ffa6c9;
     border-radius: 10px;
     overflow: hidden;
@@ -326,11 +420,8 @@ body {
     max-width: 800px;
     margin: 3rem auto;
     text-align: center;
-    background-color: white;
-    border: 2px solid #ffa6c9;
-    border-radius: 12px;
+    background-color: transparent;
     padding: 1rem;
-    box-shadow: 0 8px 16px rgba(255, 182, 193, 0.3);
   }
 
   .carousel-img {
@@ -347,7 +438,7 @@ body {
   .arrow {
     cursor: pointer;
     font-size: 2rem;
-    background-color: #ffc0cb;
+    background-color: #ff01a2;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -361,13 +452,11 @@ body {
   }
 
   .caption {
-    background-color: #ffe4e1;
-    border: 1px solid #ffa6c9;
-    border-radius: 8px;
+    background-color: transparent;
     margin-top: 1rem;
     padding: 0.75rem;
     font-size: 1rem;
-    color: #444;
+    color: black;
     max-width: 815px;
     margin: 2rem auto 0;
     text-align: center;
@@ -381,7 +470,7 @@ body {
     margin: 0 auto;
   }
   .photo-com {
-    background-color: #ffe4e1;
+    background-color: #fff5fa;
     border: 2px solid #ffa6c9;
     border-radius: 12px;
     padding: 1rem;
@@ -403,7 +492,7 @@ body {
 
   .caption {
     margin-top: 0.75rem;
-    color: #d36c89;
+    color: black;
     font-weight: 600;
     font-size: 1rem;
     font-family: 'New Century Schoolbook', serif;
@@ -413,7 +502,7 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #ffc0cb;
+    background-color: #ff69b4;
     border: none;
     color: white;
     font-size: 1.5rem;
@@ -425,7 +514,7 @@ body {
   }
 
   .arrow-btn:hover {
-    background-color: #ffa6c9;
+    background-color: #ff01a2;
   }
 
   .arrow-left {
@@ -443,6 +532,50 @@ body {
     .photo-card {
       height: auto;
     }
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: transparent;
+  margin: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.card {
+  background-color: #fff5fa;
+  border: 2px solid #ff99cc;
+  padding: 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(255, 192, 203, 0.3);
+  transition: transform 0.2s ease;
+  color: black;
+  font-family: 'New Century Schoolbook', serif;
+  font-size: 1.15rem;
+}
+
+.read-more-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #ffa6c9;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background-color: #ff01a2; /* lighter pink */
+  transform: scale(1.1);
 }
 
 /* mobile */
@@ -485,3 +618,5 @@ body {
       padding: 0.75rem;
     }
   }
+
+  
