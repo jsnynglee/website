@@ -33,8 +33,8 @@ body {
   
   nav {
     margin-top: 0.5rem;
-    font-family: 'Copperplate', fantasy;
-    font-size: 1.5rem;
+    font-family: 'Georgia', serif;
+    font-size: 1.3rem;
   }
 
   h1 {
@@ -100,8 +100,8 @@ body {
     margin-bottom: 1rem;
     border: 1px solid #ffd6e8;
     box-shadow: 0 2px 8px rgba(255, 192, 203, 0.2);
-    font-family: 'Copperplate', fantasy;
-    font-size: 1.2rem;
+    font-family: 'New Century Schoolbook', serif;
+    font-size: 1.1rem;
   }
   
   article {
@@ -130,8 +130,8 @@ body {
     box-shadow: 0 4px 12px rgba(255, 192, 203, 0.3);
     transition: transform 0.2s ease;
     color: #d36c89;
-    font-family: 'Copperplate', fantasy;
-    font-size: 1.2rem;
+    font-family: 'New Century Schoolbook', serif;
+    font-size: 1.15rem;
   }
 
   
@@ -179,8 +179,8 @@ body {
   }  
 
   h3 {
-    font-family: 'Copperplate', fantasy;
-    font-size: 1.3rem;
+    font-family: 'New Century Schoolbook', serif;
+    font-size: 1.15rem;
   }
 
   p {
@@ -217,8 +217,8 @@ body {
   }
 
   h4 {
-    font-family: 'Copperplate', fantasy;
-    font-size: 1rem;
+    font-family: 'New Century Schoolbook', serif;
+    font-size: 0.9rem;
   }
 
   .blog-grid {
@@ -406,7 +406,7 @@ body {
     color: #d36c89;
     font-weight: 600;
     font-size: 1rem;
-    font-family: 'Copperplate', fantasy;
+    font-family: 'New Century Schoolbook', serif;
   }
 
   .arrow-btn {
