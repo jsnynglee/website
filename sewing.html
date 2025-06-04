@@ -81,6 +81,11 @@
           }
           updateImage(cardIndex);
         }
+        window.onload = function () {
+            for (let i = 0; i < photoSets.length; i++) {
+                updateImage(i);
+            }
+        };
       </script>
     
   </main>
