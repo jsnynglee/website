@@ -605,6 +605,11 @@
   transform: scale(1.1);
 }
 
+h5 {
+    font-family: 'New Century Schoolbook', serif;
+    font-size: 1.2rem;
+}
+
 
 /* mobile */
 @media (max-width: 768px) {
